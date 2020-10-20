@@ -3,12 +3,12 @@ import Navbar from '../../component/Navbar/Navbar';
 
 // import './styles.css'
 
-function SignUp(){
+function Home(){
 return( 
     <>
         <Navbar />
-        <h1>SignUp</h1>
+        <h1>Home</h1>
     </>
 )}
 
-export default SignUp
+export default Home
