@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Produts from './pages/Products'
 import Contact from './pages/Contact'
 import SugnUp from './pages/SignUp'
+import Login from './pages/Login'
 
 function Routes() {
     return(
@@ -12,6 +13,7 @@ function Routes() {
             <Route path="/Products" exact component={Produts}/>
             <Route path="/Contact" exact component={Contact}/>
             <Route path="/SignUp" exact component={SugnUp}/>
+            <Route path="/Login" exact component={Login}/>
         </BrowserRouter>
     )
 }
