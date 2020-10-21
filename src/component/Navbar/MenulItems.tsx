@@ -29,5 +29,11 @@ export const MenuItems = [
         url: "/SignUp",
         cName: "nav-link",
         liName: "nav-item"
-    }
+    },
+    {
+        title: 'Carrinho',
+        url: "/Carrinho",
+        cName: "nav-link",
+        liName: "nav-item"
+    },
 ]
