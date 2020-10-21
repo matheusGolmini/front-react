@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
 import { MenuItems } from './MenulItems';
-import { Button } from '../Buttom/Button';
-import Search from '../Search/Search'
-import { Link } from 'react-router-dom'
-import './Navbar.css'
+import { Link } from 'react-router-dom';
+import '../bootstrap.min.css'
 
 class Navbar extends Component {
-    state = { clicked: false }
+    state = MenuItems
 
     handleClick = () => {
-        this.setState({ clicked: !this.state.clicked})
+        this.setState({ })
     }
 
     render(){
         return(
-            <>
-                <nav className="NavbarItems">
-                    <h1 className="navbar-logo">Ecommerce<i className="fab fa-react" /></h1>
-                    <div className="menu-icon" onClick={this.handleClick}>
-                        <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'} />
-                    </div>
-                    <ul className={this.state.clicked ? 'nav-menu active':'nav-menu'}>
-                        {MenuItems.map((item, index) => {
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand" href="#">Navbar</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarColor03">
+                    <ul className="navbar-nav mr-auto">
+                    {MenuItems.map((item, index) => {
                             return (
-                                <li key={index}>
+                                <li key={index} className={item.liName}>
                                     <Link to={item.url} className='link-router'>
-                                        <a className={item.cName} href={item.url}>
-                                        
+                                        <a className={item.cName} href={item.url} onClick={this.handleClick}>
+
                                             {item.title}
                                         
                                         </a>
@@ -35,12 +34,12 @@ class Navbar extends Component {
                             )
                         })} 
                     </ul>
-                    <Link to='SignUp'>
-                        <Button>Sign Up</Button>
-                    </Link>
-                </nav>
-                <Search />
-            </>
+                    <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
         )
     }
 }
