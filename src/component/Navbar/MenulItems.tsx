@@ -32,7 +32,7 @@ export const MenuItems = [
     },
     {
         title: 'Carrinho',
-        url: "/Carrinho",
+        url: "/Shoppingcart",
         cName: "nav-link",
         liName: "nav-item"
     },
