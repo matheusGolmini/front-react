@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MenuItems } from './MenulItems';
 import { Link } from 'react-router-dom';
 import '../bootstrap.min.css'
@@ -10,6 +10,7 @@ function Navbar() {
         e.preventDefault();
         console.log(search)
     }
+
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Navbar</a>
@@ -24,7 +25,7 @@ function Navbar() {
                             <li key={index} className={item.liName}>
                                 <Link to={item.url} className='link-router'>
                                     <a className={item.cName} href={item.url} >
-                                        {item.title === 'Carrinho'? `${item.title} 0` : item.title}
+                                        {item.title}
                                     </a>
                                 </Link>
                             </li>

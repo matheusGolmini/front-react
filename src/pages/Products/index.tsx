@@ -3,7 +3,7 @@ import Navbar from '../../component/Navbar/Navbar';
 import DefaultProduct from '../../image/bolacha.jpg'
 
 import './styles.css'
-interface IProducts {
+export interface IProducts {
     title: string;
     image: string;
     url: string;
@@ -81,14 +81,25 @@ function Products(){
 
     const [product, setProduct]: any[] = useState<IProducts[]>([])
 
-    
-
-    function addProduct(prod: IProducts) {
-        if(product.length){
+    async function addProduct(prod: IProducts) {
+        if(!product.length) {
+            const currentProdutc = localStorage.getItem("products");
+            if(!!currentProdutc && !!currentProdutc.length) {
+                console.log('localStorage')
+                await setProduct(JSON.stringify(currentProdutc))
+            }
+        }
+        
+        if(product.length ){
+            console.log('1111')
             setProduct([ ...product, prod])
         } else {
-            setProduct([prod])
+            console.log('wyuwqyshwy', [prod])
+            // await setProduct([])
+            setProduct([ prod ])
         }
+        console.log("prod: ",product)
+        localStorage.setItem("products", JSON.stringify(product))
     }
 
     return( 
