@@ -83,7 +83,7 @@ function Products(){
 
     async function addProduct(prod: IProducts) {
         if(!product.length) {
-            const currentProdutc = localStorage.getItem("products");
+            const currentProdutc = sessionStorage.getItem("products");
             if(!!currentProdutc && !!currentProdutc.length) {
                 console.log('localStorage')
                 await setProduct(JSON.stringify(currentProdutc))
@@ -99,7 +99,7 @@ function Products(){
             setProduct([ prod ])
         }
         console.log("prod: ",product)
-        localStorage.setItem("products", JSON.stringify(product))
+        sessionStorage.setItem("products", JSON.stringify(product))
     }
 
     return( 
