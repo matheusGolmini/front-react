@@ -3,46 +3,6 @@ import Navbar from '../../component/Navbar/Navbar';
 
 // import './styles.css'
 import DefaultProduct from '../../image/bolacha.jpg'
-import { IProducts } from '../Products';
-
-
-const products: IProducts[] = [
-    {
-        title: 'Home',
-        image: DefaultProduct,
-        url: "/",
-        name: "tESTE",
-        valor: 10
-    },
-    {
-        title: 'Home',
-        image: DefaultProduct,
-        url: "/",
-        name: "Hihique meu amor",
-        valor: 10
-    },
-    {
-        title: 'Home',
-        image: DefaultProduct,
-        url: "/",
-        name: "Hihique meu amor",
-        valor: 10
-    },
-    {
-        title: 'Home',
-        image: DefaultProduct,
-        url: "/",
-        name: "Hihique meu amor",
-        valor: 10
-    },
-    {
-        title: 'Home',
-        image: DefaultProduct,
-        url: "/",
-        name: "Hihique meu amor",
-        valor: 10
-    }
-]
 
 function SignUp(){
 return( 
